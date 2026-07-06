@@ -24,6 +24,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && ./llvm.sh 18 \
     && ln -sf /usr/bin/clang-18 /usr/bin/clang \
     && ln -sf /usr/bin/clang++-18 /usr/bin/clang++ \
+
+    # Remove installation dependencies
+    && apt-get purge -y --auto-remove wget gnupg software-properties-common \
     && rm -rf /var/lib/apt/lists/* llvm.sh
 
 ENV CC=clang
