@@ -1,0 +1,29 @@
+name: Build Docker Image - CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ci.Dockerfile'
+
+env:
+  DOCKERFILE_CONTEXT: ./
+  IMAGE_NAME: ci
+
+jobs:
+  build-image-ci:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GIT_TOKEN }}
+      - run: |
+          REPOSITORY_OWNER_LOWERCASE=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          docker build -t ghcr.io/$REPOSITORY_OWNER_LOWERCASE/${{ env.IMAGE_NAME }}:latest -f ${{ env.DOCKERFILE_CONTEXT }}${{ env.IMAGE_NAME }}.Dockerfile ${{ env.DOCKERFILE_CONTEXT }}
+          docker push ghcr.io/$REPOSITORY_OWNER_LOWERCASE/${{ env.IMAGE_NAME }}:latest
