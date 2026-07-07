@@ -34,11 +34,10 @@ Build the CI image:
 docker build -t ci:latest -f .github/ci.Dockerfile .
 ```
 
-You can verify the image:
+You can run it using:
 
 ```bash
-docker run --rm -it ci:latest clang++ --version
-docker run --rm -it ci:latest cmake --version
+docker run --rm -it ci:latest bash
 ```
 
 ## Publish to GitHub Container Registry (GHCR)
@@ -46,19 +45,19 @@ docker run --rm -it ci:latest cmake --version
 Tag the image:
 
 ```bash
-docker tag ci:latest ghcr.io/tsukini22/ci:latest
+docker tag ci:latest ghcr.io/<github_username_lowercase>/ci:latest
 ```
 
 Authenticate with GitHub Container Registry:
 
 ```bash
-echo <YOUR_GITHUB_TOKEN> | docker login ghcr.io -u <YOUR_GITHUB_USERNAME> --password-stdin
+echo <github_token> | docker login ghcr.io -u <github_username> --password-stdin
 ```
 
 Push the image:
 
 ```bash
-docker push ghcr.io/tsukini22/ci:latest
+docker push ghcr.io/<github_username_lowercase>/ci:latest
 ```
 
 ## Use the pre-built image
