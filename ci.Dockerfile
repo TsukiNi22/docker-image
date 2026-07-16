@@ -4,6 +4,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # HTTPS certificats
     ca-certificates \
 
+    # Scripts
+    wget \
+
     # Compilation
     ccache \
     cmake \
