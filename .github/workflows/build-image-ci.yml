@@ -46,8 +46,8 @@ jobs:
             org.opencontainers.image.version=${{ env.VERSION }}
             org.opencontainers.image.created=${{ github.event.head_commit.timestamp }}
             org.opencontainers.image.revision=${{ github.sha }}
-            org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}/pkgs/container/${{ env.IMAGE_NAME }}
             org.opencontainers.image.dockerfile=ci.Dockerfile
             org.opencontainers.image.licenses=MIT
           cache-from: type=gha
