@@ -15,7 +15,17 @@ ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
 
 | Image | Tools |
 | ----- | ----- |
-| `ci:lastest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `git`, `pkg-config`, `python3` |
+| `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `git`, `pkg-config`, `python3`, `wget` |
+
+## Status
+| Name + Link | Version | Last Update | Status |
+| ----------- | ------- | ----------- | ------ |
+| [ci][ci-link] | ![Version][ci-version] | ![Update][ci-update] | ![Build Image - CI][ci-build] |
+
+[ci-link]: https://github.com/TsukiNi22/docker-image/pkgs/container/ci
+[ci-version]: https://ghcr-badge.egpl.dev/tsukini22/ci/latest_tag?trim=major&label=latest
+[ci-update]: https://img.shields.io/github/last-commit/TsukiNi22/docker-image?path=ci.Dockerfile
+[ci-build]: https://github.com/TsukiNi22/docker-image/actions/workflows/build-image-ci.yml/badge.svg
 
 ---
 

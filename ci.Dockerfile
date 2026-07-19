@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     pkg-config \
     python3 \
 
+    # Compilation Common Dependencies
+    libssl-dev \
+
     # clang-18
     clang-18 \
     && ln -sf /usr/bin/clang-18 /usr/bin/clang \
