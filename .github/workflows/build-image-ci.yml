@@ -14,9 +14,10 @@ env:
 
 jobs:
   build-image-ci:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNNER }}
     permissions:
       packages: write
+      contents: write
 
     steps:
       # Extract the variables
@@ -50,5 +51,21 @@ jobs:
             org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}/pkgs/container/${{ env.IMAGE_NAME }}
             org.opencontainers.image.dockerfile=ci.Dockerfile
             org.opencontainers.image.licenses=MIT
+          annotations: |
+            org.opencontainers.image.title=CI - Docker Image
+            org.opencontainers.image.description=Docker image containing the CI build environment used for c++/c projects
+            org.opencontainers.image.version=${{ env.VERSION }}
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.licenses=MIT
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      # Create and push the version tag
+      - name: Update version tag
+        run: |
+          if git ls-remote --tags origin | grep -q "refs/tags/${{ env.IMAGE_NAME }}/${{ env.VERSION }}$"; then
+            echo "::error::The tag ${{ env.IMAGE_NAME }}/${{ env.VERSION }} already exist on the remote."
+            exit 1
+          fi
+          git tag ${{ env.IMAGE_NAME }}/${{ env.VERSION }}
+          git push origin ${{ env.IMAGE_NAME }}/${{ env.VERSION }}
