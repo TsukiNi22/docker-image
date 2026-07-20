@@ -52,11 +52,16 @@ jobs:
             org.opencontainers.image.dockerfile=ci.Dockerfile
             org.opencontainers.image.licenses=MIT
           annotations: |
-            org.opencontainers.image.title=CI - Docker Image
-            org.opencontainers.image.description=Docker image containing the CI build environment used for c++/c projects
-            org.opencontainers.image.version=${{ env.VERSION }}
-            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
-            org.opencontainers.image.licenses=MIT
+            index:org.opencontainers.image.title=CI - Docker Image
+            index:org.opencontainers.image.description=Docker image containing the CI build environment used for c++/c projects
+            index:org.opencontainers.image.version=${{ env.VERSION }}
+            index:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            index:org.opencontainers.image.licenses=MIT
+            manifest:org.opencontainers.image.title=CI - Docker Image
+            manifest:org.opencontainers.image.description=Docker image containing the CI build environment used for c++/c projects
+            manifest:org.opencontainers.image.version=${{ env.VERSION }}
+            manifest:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            manifest:org.opencontainers.image.licenses=MIT
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
