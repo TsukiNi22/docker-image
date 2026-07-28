@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [git:Unreleased]
+
+## [git:v1.0.0] - 2026-07-28
+### Added
+- Initial version of the GIT image with only basic tool (git, wget)
+
+[git:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/git.Dockerfile
+[git:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/git/v1.0.0/git.Dockerfile
+
+---
+
 ## [ci:Unreleased]
 
 ## [ci:v1.1.0] - 2026-07-20
