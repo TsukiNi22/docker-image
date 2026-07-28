@@ -8,7 +8,8 @@ This repository contains Docker images for development and CI/CD.
 ## Repository Content
 
 ```
-ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
+ghcr.io/tsukini22/git:latest # git
+ghcr.io/tsukini22/ci:latest  # clang -> c/c++ with cmake & make
 ```
 
 ## Included tools
