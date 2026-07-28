@@ -10,7 +10,7 @@ on:
 env:
   DOCKERFILE_CONTEXT: ./
   IMAGE_NAME: git
-  VERSION: v1.O.0
+  VERSION: v1.0.0
 
 jobs:
   build-image-git:
