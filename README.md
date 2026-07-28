@@ -33,10 +33,10 @@ ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
 [git-update]: https://img.shields.io/github/last-commit/TsukiNi22/docker-image?path=git.Dockerfile
 [git-build]: https://github.com/TsukiNi22/docker-image/actions/workflows/build-image-git.yml/badge.svg
 
-[package-link]: https://packagehub.com/TsukiNi22/docker-image/pkgs/container/package
+[package-link]: https://github.com/TsukiNi22/docker-image/pkgs/container/package
 [package-version]: https://ghcr-badge.egpl.dev/tsukini22/package/latest_tag?trim=major&label=latest
-[package-update]: https://img.shields.io/packagehub/last-commit/TsukiNi22/docker-image?path=package.Dockerfile
-[package-build]: https://packagehub.com/TsukiNi22/docker-image/actions/workflows/build-image-package.yml/badge.svg
+[package-update]: https://img.shields.io/github/last-commit/TsukiNi22/docker-image?path=package.Dockerfile
+[package-build]: https://github.com/TsukiNi22/docker-image/actions/workflows/build-image-package.yml/badge.svg
 
 [ci-link]: https://github.com/TsukiNi22/docker-image/pkgs/container/ci
 [ci-version]: https://ghcr-badge.egpl.dev/tsukini22/ci/latest_tag?trim=major&label=latest
