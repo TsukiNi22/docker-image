@@ -19,7 +19,7 @@ ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
 | ----- | ----- |
 | `git:latest` | `git`, `wget` |
 | `package:latest` | `git`, `wget`, `rpm`, `createrepo-c` |
-| `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `git`, `pkg-config`, `python3`, `wget` |
+| `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget` |
 
 ## Status
 | Name + Link | Version | Last Update | Status |
