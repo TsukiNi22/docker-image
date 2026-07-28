@@ -22,16 +22,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [package:Unreleased]
 
+## [package:v1.1.0] - 2026-07-28
+### Added
+- RPM dependencies
+
 ## [package:v1.0.0] - 2026-07-28
 ### Added
 - Initial version of the PACKAGE image with only basic tools (git, wget, signature tools, ...)
 
 [package:Unreleased]: https://packagehub.com/TsukiNi22/docker-image/commits/main/package.Dockerfile
+[package:v1.1.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.1.0/package.Dockerfile
 [package:v1.0.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.0.0/package.Dockerfile
 
 ---
 
 ## [ci:Unreleased]
+
+## [ci:v1.2.0] - 2026-07-28
+### Added
+- RPM dependencies
 
 ## [ci:v1.1.0] - 2026-07-20
 ### Added
@@ -42,6 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v1.2.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.2.0/ci.Dockerfile
 [ci:v1.1.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.1.0/ci.Dockerfile
 [ci:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.0.0/ci.Dockerfile
 

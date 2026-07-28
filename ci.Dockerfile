@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ccache \
     cmake \
     make \
+    rpm \
     git \
 
     # Compilation package
