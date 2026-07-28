@@ -13,10 +13,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [git:v1.0.0] - 2026-07-28
 ### Added
-- Initial version of the GIT image with only basic tool (git, wget)
+- Initial version of the GIT image with only basic tools (git, wget)
 
 [git:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/git.Dockerfile
 [git:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/git/v1.0.0/git.Dockerfile
+
+---
+
+## [package:Unreleased]
+
+## [package:v1.0.0] - 2026-07-28
+### Added
+- Initial version of the PACKAGE image with only basic tools (git, wget, signature tools, ...)
+
+[package:Unreleased]: https://packagehub.com/TsukiNi22/docker-image/commits/main/package.Dockerfile
+[package:v1.0.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.0.0/package.Dockerfile
 
 ---
 

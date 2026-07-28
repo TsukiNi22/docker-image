@@ -69,8 +69,8 @@ jobs:
       - name: Update version tag
         run: |
           if git ls-remote --tags origin | grep -q "refs/tags/${{ env.IMAGE_NAME }}/${{ env.VERSION }}$"; then
-            echo "::error::The tag ${{ env.IMAGE_NAME }}/${{ env.VERSION }} already exist on the remote."
-            exit 1
+            echo "::warning::The tag ${{ env.IMAGE_NAME }}/${{ env.VERSION }} already exist on the remote."
+            exit 0
           fi
           git tag ${{ env.IMAGE_NAME }}/${{ env.VERSION }}
           git push origin ${{ env.IMAGE_NAME }}/${{ env.VERSION }}

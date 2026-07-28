@@ -8,8 +8,9 @@ This repository contains Docker images for development and CI/CD.
 ## Repository Content
 
 ```
-ghcr.io/tsukini22/git:latest # git
-ghcr.io/tsukini22/ci:latest  # clang -> c/c++ with cmake & make
+ghcr.io/tsukini22/git:latest # git/wget
+ghcr.io/tsukini22/package:latest # git/wget with rpm + signature tools
+ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
 ```
 
 ## Included tools
@@ -17,18 +18,25 @@ ghcr.io/tsukini22/ci:latest  # clang -> c/c++ with cmake & make
 | Image | Tools |
 | ----- | ----- |
 | `git:latest` | `git`, `wget` |
+| `package:latest` | `git`, `wget`, `rpm`, `createrepo-c` |
 | `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `git`, `pkg-config`, `python3`, `wget` |
 
 ## Status
 | Name + Link | Version | Last Update | Status |
 | ----------- | ------- | ----------- | ------ |
 | [git][git-link] | ![Version][git-version] | ![Update][git-update] | ![Build Image - GIT][git-build] |
+| [package][package-link] | ![Version][package-version] | ![Update][package-update] | ![Build Image - GIT][package-build] |
 | [ci][ci-link] | ![Version][ci-version] | ![Update][ci-update] | ![Build Image - CI][ci-build] |
 
 [git-link]: https://github.com/TsukiNi22/docker-image/pkgs/container/git
 [git-version]: https://ghcr-badge.egpl.dev/tsukini22/git/latest_tag?trim=major&label=latest
 [git-update]: https://img.shields.io/github/last-commit/TsukiNi22/docker-image?path=git.Dockerfile
 [git-build]: https://github.com/TsukiNi22/docker-image/actions/workflows/build-image-git.yml/badge.svg
+
+[package-link]: https://packagehub.com/TsukiNi22/docker-image/pkgs/container/package
+[package-version]: https://ghcr-badge.egpl.dev/tsukini22/package/latest_tag?trim=major&label=latest
+[package-update]: https://img.shields.io/packagehub/last-commit/TsukiNi22/docker-image?path=package.Dockerfile
+[package-build]: https://packagehub.com/TsukiNi22/docker-image/actions/workflows/build-image-package.yml/badge.svg
 
 [ci-link]: https://github.com/TsukiNi22/docker-image/pkgs/container/ci
 [ci-version]: https://ghcr-badge.egpl.dev/tsukini22/ci/latest_tag?trim=major&label=latest
