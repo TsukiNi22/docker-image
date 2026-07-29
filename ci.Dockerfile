@@ -22,13 +22,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # Compilation Common Dependencies
     libssl-dev \
 
+    # Temporary: required by setup.sh (gpg --dearmor)
+    gnupg \
+
     # clang-18
     clang-18 \
     && ln -sf /usr/bin/clang-18 /usr/bin/clang \
     && ln -sf /usr/bin/clang++-18 /usr/bin/clang++ \
-
-    # Temporary: required by setup.sh (gpg --dearmor)
-    gnupg \
 
     # libutils
     && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo\
