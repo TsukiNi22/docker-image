@@ -43,6 +43,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [ci:Unreleased]
 
+## [ci:v1.3.0] - 2026-07-29
+### Added
+- `libutils` packages (c++20 library)
+
 ## [ci:v1.2.0] - 2026-07-28
 ### Added
 - RPM dependencies
@@ -56,6 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v1.3.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.3.0/ci.Dockerfile
 [ci:v1.2.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.2.0/ci.Dockerfile
 [ci:v1.1.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.1.0/ci.Dockerfile
 [ci:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.0.0/ci.Dockerfile

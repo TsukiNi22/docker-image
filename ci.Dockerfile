@@ -26,7 +26,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && ln -sf /usr/bin/clang-18 /usr/bin/clang \
     && ln -sf /usr/bin/clang++-18 /usr/bin/clang++ \
 
-    # Remove installation dependencies
+    # libutils
+    && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s \
+    && apt-get install -y libutils \
+
+    # Remove installation dependencies / Cleaning
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 ENV CC=clang
