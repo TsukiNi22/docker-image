@@ -12,6 +12,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gnupg \
     rpm \
 
+    # Signature & repo DEB
+    dpkg-dev \
+    apt-utils \
+    gzip \
+    xz-utils \
+
     # Git
     git \
 

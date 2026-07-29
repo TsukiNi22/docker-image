@@ -9,7 +9,7 @@ This repository contains Docker images for development and CI/CD.
 
 ```
 ghcr.io/tsukini22/git:latest # git/wget
-ghcr.io/tsukini22/package:latest # git/wget with rpm + signature tools
+ghcr.io/tsukini22/package:latest # git/wget with rpm/deb + signature tools
 ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
 ```
 
@@ -18,7 +18,7 @@ ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
 | Image | Tools |
 | ----- | ----- |
 | `git:latest` | `git`, `wget` |
-| `package:latest` | `git`, `wget`, `rpm`, `createrepo-c` |
+| `package:latest` | `git`, `wget`, `rpm`, `createrepo-c`, `dpkg`, `gzip`, `xz` |
 | `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget` |
 
 ## Status

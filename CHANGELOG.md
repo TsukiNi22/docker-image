@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [package:Unreleased]
 
+## [package:v1.2.0] - 2026-07-29
+### Added
+- Add debian packaging tools
+
 ## [package:v1.1.0] - 2026-07-28
 ### Added
 - RPM dependencies
@@ -31,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the PACKAGE image with only basic tools (git, wget, signature tools, ...)
 
 [package:Unreleased]: https://packagehub.com/TsukiNi22/docker-image/commits/main/package.Dockerfile
+[package:v1.2.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.2.0/package.Dockerfile
 [package:v1.1.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.1.0/package.Dockerfile
 [package:v1.0.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.0.0/package.Dockerfile
 
