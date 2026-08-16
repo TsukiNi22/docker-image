@@ -1,6 +1,9 @@
 name: Build Image - CI
 
 on:
+  repository_dispatch:
+    types: [libutils-released]
+
   push:
     branches: [main]
     paths:
