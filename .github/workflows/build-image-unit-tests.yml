@@ -1,22 +1,21 @@
-name: Build Image - CI
+name: Build Image - Unit-Tests
 
 on:
-  repository_dispatch:
-    types: [libutils-released]
+  workflow_dispatch: # Triggered by Build Image - CI
 
   push:
     branches: [main]
     paths:
-      - 'ci.Dockerfile'
-      - '.github/workflows/build-image-ci.yml'
+      - 'unit-tests.Dockerfile'
+      - '.github/workflows/build-image-unit-tests.yml'
 
 env:
   DOCKERFILE_CONTEXT: ./
-  IMAGE_NAME: ci
-  VERSION: v1.3.0
+  IMAGE_NAME: unit-tests
+  VERSION: v1.0.0
 
 jobs:
-  build-image-ci:
+  build-image-unit-teunit-testss:
     runs-on: ${{ vars.RUNNER }}
     permissions:
       packages: write
@@ -45,23 +44,23 @@ jobs:
             ghcr.io/${{ env.REPOSITORY_OWNER_LOWERCASE }}/${{ env.IMAGE_NAME }}:latest
             ghcr.io/${{ env.REPOSITORY_OWNER_LOWERCASE }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           labels: |
-            org.opencontainers.image.title=CI - Docker Image
-            org.opencontainers.image.description=Docker image containing the CI build environment used for c++/c projects
+            org.opencontainers.image.title=Unit-Tests - Docker Image
+            org.opencontainers.image.description=Docker image containing the Unit-Tests build environment used for c++/c unit tests
             org.opencontainers.image.version=${{ env.VERSION }}
             org.opencontainers.image.created=${{ github.event.head_commit.timestamp }}
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}/pkgs/container/${{ env.IMAGE_NAME }}
-            org.opencontainers.image.dockerfile=ci.Dockerfile
+            org.opencontainers.image.dockerfile=unit-tests.Dockerfile
             org.opencontainers.image.licenses=MIT
           annotations: |
-            index:org.opencontainers.image.title=CI - Docker Image
-            index:org.opencontainers.image.description=Docker image containing the CI build environment used for c++/c projects
+            index:org.opencontainers.image.title=Unit-Tests - Docker Image
+            index:org.opencontainers.image.description=Docker image containing the Unit-Tests build environment used for c++/c unit tests
             index:org.opencontainers.image.version=${{ env.VERSION }}
             index:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             index:org.opencontainers.image.licenses=MIT
-            manifest:org.opencontainers.image.title=CI - Docker Image
-            manifest:org.opencontainers.image.description=Docker image containing the CI build environment used for c++/c projects
+            manifest:org.opencontainers.image.title=Unit-Tests - Docker Image
+            manifest:org.opencontainers.image.description=Docker image containing the Unit-Tests build environment used for c++/c unit tests
             manifest:org.opencontainers.image.version=${{ env.VERSION }}
             manifest:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             manifest:org.opencontainers.image.licenses=MIT
@@ -77,21 +76,3 @@ jobs:
           fi
           git tag ${{ env.IMAGE_NAME }}/${{ env.VERSION }}
           git push origin ${{ env.IMAGE_NAME }}/${{ env.VERSION }}
-
-  notify-ci-update:
-    needs: build-image-ci
-    if: needs.build-image-ci.result == 'success'
-
-    runs-on: ${{ vars.RUNNER }}
-    defaults:
-      run:
-        shell: bash
-
-    steps:
-      - name: Trigger build-image-unit-tests.yml (workflow_dispatch)
-        run: |
-          curl -sf -X POST \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/build-image-unit-tests.yml/dispatches" \
-            -d '{"ref":"${{ github.ref_name }}"}'

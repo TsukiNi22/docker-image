@@ -11,6 +11,7 @@ This repository contains Docker images for development and CI/CD.
 ghcr.io/tsukini22/git:latest # git/wget
 ghcr.io/tsukini22/package:latest # git/wget with rpm/deb + signature tools
 ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
+ghcr.io/tsukini22/unit-tests:latest # clang -> c/c++ unit-tests with cmake & make
 ```
 
 ## Included tools
@@ -20,13 +21,15 @@ ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
 | `git:latest` | `git`, `wget` |
 | `package:latest` | `git`, `wget`, `rpm`, `createrepo-c`, `dpkg`, `gzip`, `xz`, `file` |
 | `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget` |
+| `unit-tests:latest` | `ci:latest`, `Google test c++` |
 
 ## Status
 | Name + Link | Version | Last Update | Status |
 | ----------- | ------- | ----------- | ------ |
 | [git][git-link] | ![Version][git-version] | ![Update][git-update] | ![Build Image - GIT][git-build] |
-| [package][package-link] | ![Version][package-version] | ![Update][package-update] | ![Build Image - GIT][package-build] |
+| [package][package-link] | ![Version][package-version] | ![Update][package-update] | ![Build Image - Package][package-build] |
 | [ci][ci-link] | ![Version][ci-version] | ![Update][ci-update] | ![Build Image - CI][ci-build] |
+| [unit-tests][unit-tests-link] | ![Version][unit-tests-version] | ![Update][unit-tests-update] | ![Build Image - Unit-Tests][unit-tests-build] |
 
 [git-link]: https://github.com/TsukiNi22/docker-image/pkgs/container/git
 [git-version]: https://ghcr-badge.egpl.dev/tsukini22/git/latest_tag?trim=major&label=latest
@@ -42,6 +45,11 @@ ghcr.io/tsukini22/ci:latest # clang -> c/c++ with cmake & make
 [ci-version]: https://ghcr-badge.egpl.dev/tsukini22/ci/latest_tag?trim=major&label=latest
 [ci-update]: https://img.shields.io/github/last-commit/TsukiNi22/docker-image?path=ci.Dockerfile
 [ci-build]: https://github.com/TsukiNi22/docker-image/actions/workflows/build-image-ci.yml/badge.svg
+
+[unit-tests-link]: https://github.com/TsukiNi22/docker-image/pkgs/container/unit-tests
+[unit-tests-version]: https://ghcr-badge.egpl.dev/tsukini22/unit-tests/latest_tag?trim=major&label=latest
+[unit-tests-update]: https://img.shields.io/github/last-commit/TsukiNi22/docker-image?path=unit-tests.Dockerfile
+[unit-tests-build]: https://github.com/TsukiNi22/docker-image/actions/workflows/build-image-unit-tests.yml/badge.svg
 
 ---
 
