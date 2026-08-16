@@ -1,4 +1,4 @@
-name: Build Image - PACKAGE
+name: Build Image - Package
 
 on:
   push:
@@ -42,8 +42,8 @@ jobs:
             ghcr.io/${{ env.REPOSITORY_OWNER_LOWERCASE }}/${{ env.IMAGE_NAME }}:latest
             ghcr.io/${{ env.REPOSITORY_OWNER_LOWERCASE }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           labels: |
-            org.opencontainers.image.title=PACKAGE - Docker Image
-            org.opencontainers.image.description=Docker image containing the PACKAGE build environment used for c++/c projects to be distribued
+            org.opencontainers.image.title=Package - Docker Image
+            org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued
             org.opencontainers.image.version=${{ env.VERSION }}
             org.opencontainers.image.created=${{ github.event.head_commit.timestamp }}
             org.opencontainers.image.revision=${{ github.sha }}
@@ -52,13 +52,13 @@ jobs:
             org.opencontainers.image.dockerfile=package.Dockerfile
             org.opencontainers.image.licenses=MIT
           annotations: |
-            index:org.opencontainers.image.title=PACKAGE - Docker Image
-            index:org.opencontainers.image.description=Docker image containing the PACKAGE build environment used for c++/c projects to be distribued
+            index:org.opencontainers.image.title=Package - Docker Image
+            index:org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued
             index:org.opencontainers.image.version=${{ env.VERSION }}
             index:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             index:org.opencontainers.image.licenses=MIT
-            manifest:org.opencontainers.image.title=PACKAGE - Docker Image
-            manifest:org.opencontainers.image.description=Docker image containing the PACKAGE build environment used for c++/c projects to be distribued
+            manifest:org.opencontainers.image.title=Package - Docker Image
+            manifest:org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued
             manifest:org.opencontainers.image.version=${{ env.VERSION }}
             manifest:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             manifest:org.opencontainers.image.licenses=MIT
