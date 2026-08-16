@@ -10,6 +10,9 @@ on:
       - 'ci.Dockerfile'
       - '.github/workflows/build-image-ci.yml'
 
+permissions:
+  actions: write
+
 env:
   DOCKERFILE_CONTEXT: ./
   IMAGE_NAME: ci

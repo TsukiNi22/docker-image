@@ -15,7 +15,7 @@ env:
   VERSION: v1.0.0
 
 jobs:
-  build-image-unit-teunit-testss:
+  build-image-unit-tests:
     runs-on: ${{ vars.RUNNER }}
     permissions:
       packages: write
