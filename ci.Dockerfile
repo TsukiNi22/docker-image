@@ -23,6 +23,7 @@ RUN dnf install -y \
     openssl-devel \
 
     # Temporary: required by setup.sh (gpg --dearmor)
+    # Keeped (needed by rpm-build)
     gnupg2 \
 
     # clang
@@ -33,7 +34,7 @@ RUN dnf install -y \
     && dnf install -y libutils-pre libutils-db-pre libutils-as-pre \
 
     # Remove temporary gpg dependency
-    && dnf remove -y gnupg2 \
+    #&& dnf remove -y gnupg2 \
 
     # Remove installation dependencies / Cleaning
     && dnf clean all

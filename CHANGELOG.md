@@ -53,9 +53,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [ci:Unreleased] (empty)
 
+## [ci:v2.0.1] - 2026-09-23
+### Fixed
+- A package removed (temporary one: `gnupg2`) was needed to keep `rmp-build`
+
 ## [ci:v2.0.0] - 2026-09-22
-### Changed
-- **[MAJOR]** switch to fedora as root container
+### changed
+- **[major]** switch to fedora as root container
 
 ## [ci:v1.3.1] - 2026-09-22
 ### Fixed
@@ -78,6 +82,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v2.0.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.1/ci.Dockerfile
 [ci:v2.0.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.0/ci.Dockerfile
 [ci:v1.3.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.3.1/ci.Dockerfile
 [ci:v1.3.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.3.0/ci.Dockerfile
