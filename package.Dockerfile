@@ -1,6 +1,6 @@
-FROM ubuntu:24.04
+FROM fedora:40
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN dnf install -y \
     # HTTPS certificats
     ca-certificates \
 
@@ -8,21 +8,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
 
     # Signature & repo RPM
-    createrepo-c \
-    gnupg \
-    rpm \
+    createrepo_c \
+    gnupg2 \
+    rpm-build \
 
     # Signature & repo DEB
+    dpkg \
     dpkg-dev \
-    apt-utils \
     gzip \
-    xz-utils \
+    xz \
     file \
 
     # Git
     git \
 
-    # Remove installation dependencies
-    && rm -rf /var/lib/apt/lists/*
+    # Cleaning
+    && dnf clean all
 
 WORKDIR /workspace

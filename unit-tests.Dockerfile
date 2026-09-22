@@ -1,10 +1,9 @@
 FROM ghcr.io/tsukini22/ci:latest
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN dnf install -y \
     # Unit tests building
-    libgtest-dev \
-    libgmock-dev \
+    gtest-devel \
+    gmock-devel \
 
-    # Remove installation dependencies / Cleaning
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    # Cleaning
+    && dnf clean all

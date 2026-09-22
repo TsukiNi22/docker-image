@@ -1,6 +1,6 @@
-FROM ubuntu:24.04
+FROM fedora:40
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN dnf install -y \
     # HTTPS certificats
     ca-certificates \
 
@@ -12,34 +12,31 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ccache \
     cmake \
     make \
-    rpm \
+    rpm-build \
     git \
 
     # Compilation package
-    pkg-config \
+    pkgconf-pkg-config \
     python3 \
 
     # Compilation Common Dependencies
-    libssl-dev \
+    openssl-devel \
 
     # Temporary: required by setup.sh (gpg --dearmor)
-    gnupg \
+    gnupg2 \
 
-    # clang-18
-    clang-18 \
-    && ln -sf /usr/bin/clang-18 /usr/bin/clang \
-    && ln -sf /usr/bin/clang++-18 /usr/bin/clang++ \
+    # clang
+    clang \
 
     # libutils (with optimized and debug/asan versions)
-    && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo\
-    && apt-get install -y libutils-pre libutils-db-pre libutils-as-pre \
+    && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo \
+    && dnf install -y libutils-pre libutils-db-pre libutils-as-pre \
 
     # Remove temporary gpg dependency
-    && apt-get purge -y --auto-remove gnupg \
+    && dnf remove -y gnupg2 \
 
     # Remove installation dependencies / Cleaning
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && dnf clean all
 
 ENV CC=clang
 ENV CXX=clang++

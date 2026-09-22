@@ -11,16 +11,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [git:Unreleased] (empty)
 
+## [git:v2.0.0] - 2026-09-22
+### Changed
+- **[MAJOR]** switch to fedora as root container
+
 ## [git:v1.0.0] - 2026-07-28
 ### Added
 - Initial version of the GIT image with only basic tools (git, wget)
 
 [git:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/git.Dockerfile
+[git:v2.0.0]: https://github.com/TsukiNi22/docker-image/commits/git/v2.0.0/git.Dockerfile
 [git:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/git/v1.0.0/git.Dockerfile
 
 ---
 
 ## [package:Unreleased] (empty)
+
+## [package:v2.0.0] - 2026-09-22
+### Changed
+- **[MAJOR]** switch to fedora as root container
 
 ## [package:v1.2.0] - 2026-07-29
 ### Added
@@ -35,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the PACKAGE image with only basic tools (git, wget, signature tools, ...)
 
 [package:Unreleased]: https://packagehub.com/TsukiNi22/docker-image/commits/main/package.Dockerfile
+[package:v2.0.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.0.0/package.Dockerfile
 [package:v1.2.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.2.0/package.Dockerfile
 [package:v1.1.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.1.0/package.Dockerfile
 [package:v1.0.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.0.0/package.Dockerfile
@@ -42,6 +52,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 ## [ci:Unreleased] (empty)
+
+## [ci:v2.0.0] - 2026-09-22
+### Changed
+- **[MAJOR]** switch to fedora as root container
 
 ## [ci:v1.3.1] - 2026-09-22
 ### Fixed
@@ -64,6 +78,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v2.0.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.0/ci.Dockerfile
 [ci:v1.3.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.3.1/ci.Dockerfile
 [ci:v1.3.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.3.0/ci.Dockerfile
 [ci:v1.2.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.2.0/ci.Dockerfile
@@ -74,11 +89,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unit-tests:Unreleased] (empty)
 
+## [unit-tests:v2.0.0] - 2026-09-22
+### Changed
+- **[MAJOR]** switch to fedora as root container
+
 ## [unit-tests:v1.0.0] - 2026-08-16
 ### Added
 - Initial version of the Unit-Tests image with only basic unit tests tool (Google Tests c++), this image is derived from the `ci` image
 
 [unit-tests:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/unit-tests.Dockerfile
+[unit-tests:v2.0.0]: https://github.com/TsukiNi22/docker-image/commits/unit-tests/v2.0.0/unit-tests.Dockerfile
 [unit-tests:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/unit-tests/v1.0.0/unit-tests.Dockerfile
 
 ---

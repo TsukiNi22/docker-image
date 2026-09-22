@@ -12,7 +12,7 @@ on:
 env:
   DOCKERFILE_CONTEXT: ./
   IMAGE_NAME: unit-tests
-  VERSION: v1.0.0
+  VERSION: v2.0.0
 
 jobs:
   build-image-unit-tests:

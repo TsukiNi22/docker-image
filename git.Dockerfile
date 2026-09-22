@@ -1,6 +1,6 @@
-FROM ubuntu:24.04
+FROM fedora:40
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN dnf install -y \
     # HTTPS certificats
     ca-certificates \
 
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # Git
     git \
 
-    # Remove installation dependencies
-    && rm -rf /var/lib/apt/lists/*
+    # Cleaning
+    && dnf clean all
 
 WORKDIR /workspace
