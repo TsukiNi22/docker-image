@@ -17,6 +17,7 @@ RUN dnf install -y \
     # Signature & repo DEB
     dpkg \
     dpkg-dev \
+    apt-utils \
     gzip \
     xz \
     file \
