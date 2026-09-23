@@ -7,6 +7,7 @@ RUN dnf install -y \
     # Scripts
     wget \
     curl \
+    which \
 
     # Compilation
     ccache \

@@ -27,6 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [package:Unreleased] (empty)
 
+## [package:v2.0.1] - 2026-09-23
+### Fixed
+- Add missing package such as `which` for scripts
+
 ## [package:v2.0.0] - 2026-09-22
 ### Changed
 - **[MAJOR]** switch to fedora as root container
@@ -44,6 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the PACKAGE image with only basic tools (git, wget, signature tools, ...)
 
 [package:Unreleased]: https://packagehub.com/TsukiNi22/docker-image/commits/main/package.Dockerfile
+[package:v2.0.1]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.0.1/package.Dockerfile
 [package:v2.0.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.0.0/package.Dockerfile
 [package:v1.2.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.2.0/package.Dockerfile
 [package:v1.1.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.1.0/package.Dockerfile
@@ -52,6 +57,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 ## [ci:Unreleased] (empty)
+
+## [ci:v2.0.2] - 2026-09-23
+### Fixed
+- Add missing package such as `which` for scripts
 
 ## [ci:v2.0.1] - 2026-09-23
 ### Fixed
@@ -82,6 +91,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v2.0.2]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.2/ci.Dockerfile
 [ci:v2.0.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.1/ci.Dockerfile
 [ci:v2.0.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.0/ci.Dockerfile
 [ci:v1.3.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v1.3.1/ci.Dockerfile

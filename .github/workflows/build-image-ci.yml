@@ -16,7 +16,7 @@ permissions:
 env:
   DOCKERFILE_CONTEXT: ./
   IMAGE_NAME: ci
-  VERSION: v2.0.1
+  VERSION: v2.0.2
 
 jobs:
   build-image-ci:

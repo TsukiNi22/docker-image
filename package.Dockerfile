@@ -6,6 +6,7 @@ RUN dnf install -y \
 
     # Scripts
     wget \
+    which \
 
     # Signature & repo RPM
     createrepo_c \

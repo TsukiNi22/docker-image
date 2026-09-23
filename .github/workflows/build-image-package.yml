@@ -10,7 +10,7 @@ on:
 env:
   DOCKERFILE_CONTEXT: ./
   IMAGE_NAME: package
-  VERSION: v2.0.0
+  VERSION: v2.0.1
 
 jobs:
   build-image-package:
