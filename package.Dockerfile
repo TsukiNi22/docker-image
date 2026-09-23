@@ -12,6 +12,7 @@ RUN dnf install -y \
     createrepo_c \
     gnupg2 \
     rpm-build \
+    rpm-sign \
 
     # Signature & repo DEB
     dpkg \
