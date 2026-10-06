@@ -58,6 +58,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [ci:Unreleased] (empty)
 
+## [ci:v2.1.0] - 2026-10-06
+### Added
+- `xstyle` (coding style checker / fixer of [skills](https://github.com/TsukiNi22/skills), built from `style/xstyle`) for the style check step of the workflows
+
 ## [ci:v2.0.2] - 2026-09-23
 ### Fixed
 - Add missing package such as `which` for scripts
@@ -91,6 +95,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v2.1.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.1.0/ci.Dockerfile
 [ci:v2.0.2]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.2/ci.Dockerfile
 [ci:v2.0.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.1/ci.Dockerfile
 [ci:v2.0.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.0/ci.Dockerfile

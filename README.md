@@ -20,7 +20,7 @@ ghcr.io/tsukini22/unit-tests:latest # clang -> c/c++ unit-tests with cmake & mak
 | ----- | ----- |
 | `git:latest` | `git`, `wget` |
 | `package:latest` | `git`, `wget`, `rpm`, `createrepo-c`, `dpkg`, `gzip`, `xz`, `file` |
-| `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget` |
+| `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `libutils`, `xstyle` |
 | `unit-tests:latest` | `ci:latest`, `Google test c++` |
 
 ## Status
