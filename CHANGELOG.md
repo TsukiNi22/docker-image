@@ -122,3 +122,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [unit-tests:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/unit-tests/v1.0.0/unit-tests.Dockerfile
 
 ---
+
+## [mingw64-ci:Unreleased] (empty)
+
+## [mingw64-ci:v1.0.0] - 2026-10-15
+### Added
+- Initial version of the MinGW64-CI image (windows cross compilation: `mingw64-gcc/g++`, cmake toolchain, `mingw64-openssl`, static winpthreads, `mingw64-libutils-pre` with its debug variant, `xstyle`), independent from the `ci` image
+
+[mingw64-ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/mingw64-ci.Dockerfile
+[mingw64-ci:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.0.0/mingw64-ci.Dockerfile
+
+---
+
+## [mingw64-unit-tests:Unreleased] (empty)
+
+## [mingw64-unit-tests:v1.0.0] - 2026-10-15
+### Added
+- Initial version of the MinGW64-Unit-Tests image (Google Tests c++ built for mingw64, `wine` as ctest emulator), this image is derived from the `mingw64-ci` image
+
+[mingw64-unit-tests:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/mingw64-unit-tests.Dockerfile
+[mingw64-unit-tests:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-unit-tests/v1.0.0/mingw64-unit-tests.Dockerfile
+
+---
+
+## [mingw64-package:Unreleased] (empty)
+
+## [mingw64-package:v1.0.0] - 2026-10-15
+### Added
+- Initial version of the MinGW64-Package image (windows installers `NSIS` / `msitools`, `zip`, `osslsigncode`, `mingw64-objdump`), independent from the `package` image
+
+[mingw64-package:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/mingw64-package.Dockerfile
+[mingw64-package:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-package/v1.0.0/mingw64-package.Dockerfile
+
+---
