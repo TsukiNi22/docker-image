@@ -8,6 +8,7 @@ RUN dnf install -y \
     wget \
     curl \
     which \
+    procps-ng \
 
     # Compilation
     ccache \
@@ -32,14 +33,12 @@ RUN dnf install -y \
 
     # libutils (with optimized and debug/asan versions)
     && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo \
-    && dnf install -y libutils-pre libutils-db-pre libutils-as-pre \
+    && dnf install -y libutils libutils-db libutils-as \
 
-    # xstyle (coding style checker / fixer of TsukiNi22/skills, built with libutils)
-    && git clone -q --depth 1 https://github.com/TsukiNi22/skills.git /tmp/skills \
-    && cmake -S /tmp/skills/style/xstyle -B /tmp/xstyle -DCMAKE_BUILD_TYPE=Optimized \
-    && cmake --build /tmp/xstyle --parallel \
-    && cmake --install /tmp/xstyle --prefix /usr/local \
-    && rm -rf /tmp/skills /tmp/xstyle \
+    # xstyle (coding style checker / fixer of TsukiNi22/ai-utils, built with libutils)
+    && wget -qO- https://raw.githubusercontent.com/TsukiNi22/ai-utils/main/setup.sh | bash -s -- install xstyle --prefix /usr/local \
+    && command -v xstyle \
+    && rm -rf ~/.local/share/tsukini-skills ~/.cache/tsukini-skills \
 
     # Remove temporary gpg dependency
     #&& dnf remove -y gnupg2 \
