@@ -24,14 +24,14 @@ ghcr.io/tsukini22/mingw64-unit-tests:latest # mingw64 -> c/c++ windows unit-test
 | `package:latest` | `git`, `wget`, `rpm`, `createrepo-c`, `dpkg`, `gzip`, `xz`, `file`, `makensis (NSIS)`, `wixl (msitools)`, `zip`, `osslsigncode`, `mingw64-objdump` |
 | `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `libutils`, `xstyle` |
 | `unit-tests:latest` | `ci:latest`, `Google test c++` |
-| `mingw64-ci:latest` | `mingw64-gcc/g++ (x86_64-w64-mingw32)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `mingw64-binutils`, `mingw64-cmake`, `mingw64-pkg-config`, `mingw64-openssl`, `mingw64-winpthreads-static`, `clang/clang++`, `libutils`, `xstyle` |
+| `mingw64-ci:latest` | `mingw64-gcc/g++ (x86_64-w64-mingw32)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `mingw64-binutils`, `mingw64-cmake`, `mingw64-pkg-config`, `mingw64-openssl`, `mingw64-winpthreads-static`, `mingw64-libutils (optimized & debug)`, `clang/clang++`, `xstyle` |
 | `mingw64-unit-tests:latest` | `mingw64-ci:latest`, `Google test c++ (mingw64)`, `wine` |
 
 > [!NOTE]
 > The `mingw64-*` images set `CC`, `CXX` and `CMAKE_TOOLCHAIN_FILE` (`/usr/share/mingw/toolchain-mingw64.cmake`):
 > a plain `cmake -S . -B build` cross compiles for windows (x86_64). They are independent from the `ci`
-> image (based on `fedora:44`). The linux `libutils` and `clang` are only there for the native `xstyle` (libutils for
-> windows not included yet). `mingw64-unit-tests` sets `CMAKE_CROSSCOMPILING_EMULATOR=wine` so `ctest` runs the `.exe`.
+> image (based on `fedora:44`). `mingw64-libutils` installs libutils for windows into the mingw sysroot
+> (`find_package(utils)` works as is), `clang` is only there for the native `xstyle` (no linux `libutils`). `mingw64-unit-tests` sets `CMAKE_CROSSCOMPILING_EMULATOR=wine` so `ctest` runs the `.exe`.
 
 ## Status
 | Name + Link | Version | Last Update | Status |
