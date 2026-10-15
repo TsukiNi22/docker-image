@@ -63,6 +63,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [ci:Unreleased] (empty)
 
+## [ci:v2.1.1] - 2026-10-15
+### Fixed
+- `libutils` stable channel (`libutils`, `libutils-db`, `libutils-as`) instead of `-pre` (2.14.0): `xstyle` requires libutils 4.0.0
+- `xstyle` installed with the `setup.sh` of [ai-utils](https://github.com/TsukiNi22/ai-utils) (`install xstyle`), `procps-ng` added for it
+
 ## [ci:v2.1.0] - 2026-10-06
 ### Added
 - `xstyle` (coding style checker / fixer of [skills](https://github.com/TsukiNi22/skills), built from `style/xstyle`) for the style check step of the workflows
@@ -100,6 +105,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v2.1.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.1.1/ci.Dockerfile
 [ci:v2.1.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.1.0/ci.Dockerfile
 [ci:v2.0.2]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.2/ci.Dockerfile
 [ci:v2.0.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.1/ci.Dockerfile
@@ -130,11 +136,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [mingw64-ci:Unreleased] (empty)
 
+## [mingw64-ci:v1.0.1] - 2026-10-15
+### Fixed
+- `rpm-build` added: the RPM packages (`mingw64-libutils*` of libutils) failed with `RPM package requires rpmbuild executable`
+- `xstyle` installed with the `setup.sh` of [ai-utils](https://github.com/TsukiNi22/ai-utils) (`install xstyle`), `procps-ng` added for it
+
 ## [mingw64-ci:v1.0.0] - 2026-10-15
 ### Added
 - Initial version of the MinGW64-CI image (windows cross compilation: `mingw64-gcc/g++`, cmake toolchain, `mingw64-openssl`, static winpthreads, `xstyle`), independent from the `ci` image
 
 [mingw64-ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/mingw64-ci.Dockerfile
+[mingw64-ci:v1.0.1]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.0.1/mingw64-ci.Dockerfile
 [mingw64-ci:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.0.0/mingw64-ci.Dockerfile
 
 ---
