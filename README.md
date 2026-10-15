@@ -24,7 +24,7 @@ ghcr.io/tsukini22/mingw64-unit-tests:latest # mingw64 -> c/c++ windows unit-test
 | `package:latest` | `git`, `wget`, `rpm`, `createrepo-c`, `dpkg`, `gzip`, `xz`, `file`, `makensis (NSIS)`, `wixl (msitools)`, `zip`, `osslsigncode`, `mingw64-objdump` |
 | `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `libutils`, `xstyle` |
 | `unit-tests:latest` | `ci:latest`, `Google test c++` |
-| `mingw64-ci:latest` | `mingw64-gcc/g++ (x86_64-w64-mingw32)`, `ccache`, `cmake`, `make`, `git`, `pkg-config`, `python3`, `wget`, `mingw64-binutils`, `mingw64-cmake`, `mingw64-pkg-config`, `mingw64-openssl`, `mingw64-winpthreads-static`, `clang/clang++`, `libutils`, `xstyle` |
+| `mingw64-ci:latest` | `mingw64-gcc/g++ (x86_64-w64-mingw32)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `mingw64-binutils`, `mingw64-cmake`, `mingw64-pkg-config`, `mingw64-openssl`, `mingw64-winpthreads-static`, `clang/clang++`, `libutils`, `xstyle` |
 | `mingw64-unit-tests:latest` | `mingw64-ci:latest`, `Google test c++ (mingw64)`, `wine` |
 
 > [!NOTE]
