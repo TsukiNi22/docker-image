@@ -13,7 +13,7 @@ permissions:
 env:
   DOCKERFILE_CONTEXT: ./
   IMAGE_NAME: mingw64-ci
-  VERSION: v1.0.0
+  VERSION: v1.0.1
 
 jobs:
   build-image-mingw64-ci:
