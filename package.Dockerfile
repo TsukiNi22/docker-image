@@ -22,6 +22,17 @@ RUN dnf install -y \
     xz \
     file \
 
+    # Windows installers (.exe NSIS / .msi) & archives
+    mingw32-nsis \
+    msitools \
+    zip \
+
+    # Windows signature (Authenticode)
+    osslsigncode \
+
+    # Windows dll dependencies inspection (x86_64-w64-mingw32-objdump)
+    mingw64-binutils \
+
     # Git
     git \
 

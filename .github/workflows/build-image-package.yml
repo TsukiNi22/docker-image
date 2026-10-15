@@ -10,7 +10,7 @@ on:
 env:
   DOCKERFILE_CONTEXT: ./
   IMAGE_NAME: package
-  VERSION: v2.0.1
+  VERSION: v2.1.0
 
 jobs:
   build-image-package:
@@ -43,7 +43,7 @@ jobs:
             ghcr.io/${{ env.REPOSITORY_OWNER_LOWERCASE }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           labels: |
             org.opencontainers.image.title=Package - Docker Image
-            org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued
+            org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued (linux rpm/deb & windows installers)
             org.opencontainers.image.version=${{ env.VERSION }}
             org.opencontainers.image.created=${{ github.event.head_commit.timestamp }}
             org.opencontainers.image.revision=${{ github.sha }}
@@ -53,12 +53,12 @@ jobs:
             org.opencontainers.image.licenses=MIT
           annotations: |
             index:org.opencontainers.image.title=Package - Docker Image
-            index:org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued
+            index:org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued (linux rpm/deb & windows installers)
             index:org.opencontainers.image.version=${{ env.VERSION }}
             index:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             index:org.opencontainers.image.licenses=MIT
             manifest:org.opencontainers.image.title=Package - Docker Image
-            manifest:org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued
+            manifest:org.opencontainers.image.description=Docker image containing the Package build environment used for c++/c projects to be distribued (linux rpm/deb & windows installers)
             manifest:org.opencontainers.image.version=${{ env.VERSION }}
             manifest:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             manifest:org.opencontainers.image.licenses=MIT
