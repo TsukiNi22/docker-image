@@ -27,6 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [package:Unreleased] (empty)
 
+## [package:v2.1.0] - 2026-10-15
+### Added
+- Windows packaging tools (installers `NSIS` / `msitools`, `zip`, `osslsigncode`, `mingw64-objdump`), merged from the `mingw64-package` image
+
 ## [package:v2.0.1] - 2026-09-23
 ### Fixed
 - Add missing package such as `which` for scripts
@@ -48,6 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the PACKAGE image with only basic tools (git, wget, signature tools, ...)
 
 [package:Unreleased]: https://packagehub.com/TsukiNi22/docker-image/commits/main/package.Dockerfile
+[package:v2.1.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.1.0/package.Dockerfile
 [package:v2.0.1]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.0.1/package.Dockerfile
 [package:v2.0.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.0.0/package.Dockerfile
 [package:v1.2.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v1.2.0/package.Dockerfile
@@ -144,6 +149,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [mingw64-unit-tests:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-unit-tests/v1.0.0/mingw64-unit-tests.Dockerfile
 
 ---
+
+> [!WARNING]
+> `mingw64-package` is merged into `package` (`package:v2.1.0`) and no longer built
 
 ## [mingw64-package:Unreleased] (empty)
 
