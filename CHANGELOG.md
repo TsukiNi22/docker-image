@@ -127,7 +127,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [mingw64-ci:v1.0.0] - 2026-10-15
 ### Added
-- Initial version of the MinGW64-CI image (windows cross compilation: `mingw64-gcc/g++`, cmake toolchain, `mingw64-openssl`, static winpthreads, `mingw64-libutils-pre` with its debug variant, `xstyle`), independent from the `ci` image
+- Initial version of the MinGW64-CI image (windows cross compilation: `mingw64-gcc/g++`, cmake toolchain, `mingw64-openssl`, static winpthreads, `xstyle`), independent from the `ci` image
 
 [mingw64-ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/mingw64-ci.Dockerfile
 [mingw64-ci:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.0.0/mingw64-ci.Dockerfile

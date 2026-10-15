@@ -38,9 +38,10 @@ RUN dnf install -y \
     openssl-devel \
     gnupg2 \
 
-    # libutils windows (mingw sysroot) & linux (needed by xstyle)
+    # libutils linux (needed by xstyle)
+    # Temporary: mingw64-libutils-pre / mingw64-libutils-db-pre (windows) added once published (built in this image)
     && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo \
-    && dnf install -y mingw64-libutils-pre mingw64-libutils-db-pre libutils \
+    && dnf install -y libutils \
 
     # xstyle (coding style checker / fixer of TsukiNi22/skills, built with libutils)
     && git clone -q --depth 1 https://github.com/TsukiNi22/skills.git /tmp/skills \

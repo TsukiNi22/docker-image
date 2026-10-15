@@ -25,15 +25,15 @@ ghcr.io/tsukini22/mingw64-package:latest # package with windows installers + sig
 | `package:latest` | `git`, `wget`, `rpm`, `createrepo-c`, `dpkg`, `gzip`, `xz`, `file` |
 | `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `libutils`, `xstyle` |
 | `unit-tests:latest` | `ci:latest`, `Google test c++` |
-| `mingw64-ci:latest` | `mingw64-gcc/g++ (x86_64-w64-mingw32)`, `ccache`, `cmake`, `make`, `git`, `pkg-config`, `python3`, `wget`, `mingw64-binutils`, `mingw64-cmake`, `mingw64-pkg-config`, `mingw64-openssl`, `mingw64-winpthreads-static`, `mingw64-libutils-pre (optimized & debug)`, `clang/clang++`, `libutils`, `xstyle` |
+| `mingw64-ci:latest` | `mingw64-gcc/g++ (x86_64-w64-mingw32)`, `ccache`, `cmake`, `make`, `git`, `pkg-config`, `python3`, `wget`, `mingw64-binutils`, `mingw64-cmake`, `mingw64-pkg-config`, `mingw64-openssl`, `mingw64-winpthreads-static`, `clang/clang++`, `libutils`, `xstyle` |
 | `mingw64-unit-tests:latest` | `mingw64-ci:latest`, `Google test c++ (mingw64)`, `wine` |
 | `mingw64-package:latest` | `git`, `wget`, `gnupg2`, `file`, `makensis (NSIS)`, `wixl (msitools)`, `zip`, `osslsigncode`, `mingw64-objdump` |
 
 > [!NOTE]
 > The `mingw64-*` images set `CC`, `CXX` and `CMAKE_TOOLCHAIN_FILE` (`/usr/share/mingw/toolchain-mingw64.cmake`):
 > a plain `cmake -S . -B build` cross compiles for windows (x86_64). They are independent from the `ci` / `package`
-> images (based on `fedora:44`). `mingw64-libutils-pre` installs libutils for windows into the mingw sysroot
-> (`find_package(utils)` works as is), the linux `libutils` and `clang` are only there for the native `xstyle`. `mingw64-unit-tests` sets `CMAKE_CROSSCOMPILING_EMULATOR=wine` so `ctest` runs the `.exe`.
+> images (based on `fedora:44`). The linux `libutils` and `clang` are only there for the native `xstyle` (libutils for
+> windows not included yet). `mingw64-unit-tests` sets `CMAKE_CROSSCOMPILING_EMULATOR=wine` so `ctest` runs the `.exe`.
 
 ## Status
 | Name + Link | Version | Last Update | Status |
