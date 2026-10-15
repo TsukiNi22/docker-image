@@ -34,21 +34,24 @@ RUN dnf install -y \
     # Compilation Common Dependencies (windows)
     mingw64-openssl \
 
-    # Native build of xstyle (clang, libutils linux, ps for the ai-utils setup.sh)
+    # Native build of xstyle (clang, ps for the ai-utils setup.sh)
     clang \
     openssl-devel \
     gnupg2 \
     procps-ng \
 
-    # libutils linux (needed by xstyle)
-    # Temporary: mingw64-libutils-pre / mingw64-libutils-db-pre (windows) added once published (built in this image)
+    # libutils windows (optimized & debug, mingw sysroot)
+    # Temporary: libutils linux (xstyle build only, its libutils rules read the mingw sysroot)
     && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo \
-    && dnf install -y libutils \
+    && dnf install -y mingw64-libutils mingw64-libutils-db libutils \
 
     # xstyle (coding style checker / fixer of TsukiNi22/ai-utils, built with libutils)
     && wget -qO- https://raw.githubusercontent.com/TsukiNi22/ai-utils/main/setup.sh | bash -s -- install xstyle --prefix /usr/local \
     && command -v xstyle \
     && rm -rf ~/.local/share/tsukini-skills ~/.cache/tsukini-skills \
+
+    # Remove temporary libutils linux
+    && dnf remove -y libutils libutils-op libutils-dev libutils-dev-op \
 
     # Cleaning
     && dnf clean all
