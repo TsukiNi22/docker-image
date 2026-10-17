@@ -20,6 +20,7 @@ RUN dnf install -y \
     # Compilation package
     pkgconf-pkg-config \
     python3 \
+    bsdtar \
 
     # Compilation Common Dependencies
     openssl-devel \
