@@ -22,6 +22,11 @@ RUN dnf install -y \
     xz \
     file \
 
+    # Signature & repo Arch (repo-add, pacman-key)
+    pacman \
+    bsdtar \
+    zstd \
+
     # Windows installers (.exe NSIS / .msi) & archives
     mingw32-nsis \
     msitools \
