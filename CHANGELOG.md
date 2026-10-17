@@ -27,6 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [package:Unreleased] (empty)
 
+## [package:v2.2.0] - 2026-10-17
+### Added
+- Arch Linux (pacman) repository tools: `pacman` (`repo-add`), `bsdtar`, `zstd` (libutils `arch/` repository on gh-pages)
+
 ## [package:v2.1.0] - 2026-10-15
 ### Added
 - Windows packaging tools (installers `NSIS` / `msitools`, `zip`, `osslsigncode`, `mingw64-objdump`), merged from the `mingw64-package` image
@@ -52,6 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the PACKAGE image with only basic tools (git, wget, signature tools, ...)
 
 [package:Unreleased]: https://packagehub.com/TsukiNi22/docker-image/commits/main/package.Dockerfile
+[package:v2.2.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.2.0/package.Dockerfile
 [package:v2.1.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.1.0/package.Dockerfile
 [package:v2.0.1]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.0.1/package.Dockerfile
 [package:v2.0.0]: https://packagehub.com/TsukiNi22/docker-image/commits/package/v2.0.0/package.Dockerfile
@@ -62,6 +67,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 ## [ci:Unreleased] (empty)
+
+## [ci:v2.2.0] - 2026-10-17
+### Added
+- `bsdtar` (libarchive): the Arch Linux packages (`.pkg.tar.zst`) of libutils are built by CPack
 
 ## [ci:v2.1.1] - 2026-10-15
 ### Fixed
@@ -105,6 +114,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v2.2.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.2.0/ci.Dockerfile
 [ci:v2.1.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.1.1/ci.Dockerfile
 [ci:v2.1.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.1.0/ci.Dockerfile
 [ci:v2.0.2]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.0.2/ci.Dockerfile
