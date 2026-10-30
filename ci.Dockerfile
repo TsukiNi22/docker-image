@@ -32,9 +32,9 @@ RUN dnf install -y \
     # clang
     clang \
 
-    # libutils (with optimized and debug/asan versions)
+    # libutils pre-release channel (latest version, even unstable) (with optimized and debug/asan versions)
     && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo \
-    && dnf install -y libutils libutils-db libutils-as \
+    && dnf install -y libutils-pre libutils-db-pre libutils-as-pre \
 
     # xstyle (coding style checker / fixer of TsukiNi22/ai-utils, built with libutils)
     && wget -qO- https://raw.githubusercontent.com/TsukiNi22/ai-utils/main/setup.sh | bash -s -- install xstyle --prefix /usr/local \
