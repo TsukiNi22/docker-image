@@ -36,10 +36,13 @@ RUN dnf install -y \
     && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo \
     && dnf install -y libutils-pre libutils-db-pre libutils-as-pre \
 
-    # xstyle (coding style checker / fixer of TsukiNi22/ai-utils, built with libutils)
-    && wget -qO- https://raw.githubusercontent.com/TsukiNi22/ai-utils/main/setup.sh | bash -s -- install xstyle --prefix /usr/local \
+    # xstyle (coding style checker / fixer of TsukiNi22/xstyle, built with libutils, + its completion)
+    && git clone -q --depth 1 https://github.com/TsukiNi22/xstyle.git /tmp/xstyle \
+    && cmake -S /tmp/xstyle -B /tmp/xstyle/build -DCMAKE_BUILD_TYPE=Optimized \
+    && cmake --build /tmp/xstyle/build --parallel "$(nproc)" \
+    && cmake --install /tmp/xstyle/build --prefix /usr/local \
     && command -v xstyle \
-    && rm -rf ~/.local/share/tsukini-skills ~/.cache/tsukini-skills \
+    && rm -rf /tmp/xstyle \
 
     # Remove temporary gpg dependency
     #&& dnf remove -y gnupg2 \
