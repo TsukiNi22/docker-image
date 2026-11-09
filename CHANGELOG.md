@@ -68,6 +68,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [ci:Unreleased] (empty)
 
+## [ci:v2.3.1] - 2026-11-09
+### Fixed
+- `xstyle` built from its own repository [TsukiNi22/xstyle](https://github.com/TsukiNi22/xstyle) (moved out of ai-utils: the `setup.sh` of ai-utils no longer builds it), its bash / zsh / fish completion installed with it
+
 ## [ci:v2.3.0] - 2026-10-30
 ### Changed
 - `libutils` pre-release channel (`libutils-pre`, `libutils-db-pre`, `libutils-as-pre`) instead of the stable one, to always get the latest version even if it is not stable
@@ -118,6 +122,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v2.3.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.3.1/ci.Dockerfile
 [ci:v2.3.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.3.0/ci.Dockerfile
 [ci:v2.2.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.2.0/ci.Dockerfile
 [ci:v2.1.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.1.1/ci.Dockerfile
@@ -151,6 +156,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [mingw64-ci:Unreleased] (empty)
 
+## [mingw64-ci:v1.2.1] - 2026-11-09
+### Fixed
+- `xstyle` built from its own repository [TsukiNi22/xstyle](https://github.com/TsukiNi22/xstyle) (moved out of ai-utils: the `setup.sh` of ai-utils no longer builds it), its bash / zsh / fish completion installed with it
+
 ## [mingw64-ci:v1.2.0] - 2026-10-30
 ### Changed
 - `mingw64-libutils-pre` & `mingw64-libutils-db-pre` (pre-release channel) instead of the stable packages, to always get the latest version even if it is not stable (the temporary linux `libutils-pre` follows)
@@ -168,6 +177,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the MinGW64-CI image (windows cross compilation: `mingw64-gcc/g++`, cmake toolchain, `mingw64-openssl`, static winpthreads, `xstyle`), independent from the `ci` image
 
 [mingw64-ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/mingw64-ci.Dockerfile
+[mingw64-ci:v1.2.1]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.2.1/mingw64-ci.Dockerfile
 [mingw64-ci:v1.2.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.2.0/mingw64-ci.Dockerfile
 [mingw64-ci:v1.1.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.1.0/mingw64-ci.Dockerfile
 [mingw64-ci:v1.0.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.0.0/mingw64-ci.Dockerfile
