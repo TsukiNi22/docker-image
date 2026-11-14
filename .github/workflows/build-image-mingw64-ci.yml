@@ -1,6 +1,9 @@
 name: Build Image - MinGW64-CI
 
 on:
+  repository_dispatch: # Sent by libutils, brain and xstyle after a package publication (rebuilt without cache)
+    types: [libutils-released, brain-released, xstyle-released]
+
   push:
     branches: [main]
     paths:
@@ -13,7 +16,7 @@ permissions:
 env:
   DOCKERFILE_CONTEXT: ./
   IMAGE_NAME: mingw64-ci
-  VERSION: v1.2.1
+  VERSION: v1.3.0
 
 jobs:
   build-image-mingw64-ci:
@@ -65,6 +68,8 @@ jobs:
             manifest:org.opencontainers.image.version=${{ env.VERSION }}
             manifest:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             manifest:org.opencontainers.image.licenses=MIT
+          # A new package (repository_dispatch) is only installed by a build without the cached dnf layer
+          no-cache: ${{ github.event_name == 'repository_dispatch' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

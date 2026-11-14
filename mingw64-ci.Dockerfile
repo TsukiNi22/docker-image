@@ -34,27 +34,16 @@ RUN dnf install -y \
     # Compilation Common Dependencies (windows)
     mingw64-openssl \
 
-    # Native build of xstyle (clang)
-    clang \
-    openssl-devel \
-    gnupg2 \
-    procps-ng \
+    # my-universe repositories (libutils, brain, xstyle)
+    && wget -qO- https://tsukini22.github.io/my-universe/install.sh | bash -s -- --no-sudo --only libutils,brain,xstyle \
 
-    # libutils windows pre-release channel (latest version, even unstable) (optimized & debug, mingw sysroot)
-    # Temporary: libutils linux (xstyle build only, its libutils rules read the mingw sysroot)
-    && wget -qO- https://raw.githubusercontent.com/TsukiNi22/libutils/main/setup.sh | bash -s -- --no-sudo \
-    && dnf install -y mingw64-libutils-pre mingw64-libutils-db-pre libutils-pre \
-
-    # xstyle (coding style checker / fixer of TsukiNi22/xstyle, built with libutils, + its completion)
-    && git clone -q --depth 1 https://github.com/TsukiNi22/xstyle.git /tmp/xstyle \
-    && cmake -S /tmp/xstyle -B /tmp/xstyle/build -DCMAKE_BUILD_TYPE=Optimized \
-    && cmake --build /tmp/xstyle/build --parallel "$(nproc)" \
-    && cmake --install /tmp/xstyle/build --prefix /usr/local \
+    # libutils & brain windows pre-release channel (latest version, even unstable) (optimized & debug, mingw sysroot)
+    # xstyle pre-release channel (native coding style checker / fixer, + its completion)
+    && dnf install -y \
+        mingw64-libutils-pre mingw64-libutils-db-pre \
+        mingw64-libbrain-pre mingw64-libbrain-db-pre \
+        xstyle-pre \
     && command -v xstyle \
-    && rm -rf /tmp/xstyle \
-
-    # Remove temporary libutils linux
-    && dnf remove -y libutils-pre libutils-op-pre libutils-dev-pre libutils-dev-op-pre \
 
     # Cleaning
     && dnf clean all
