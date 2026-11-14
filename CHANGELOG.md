@@ -68,6 +68,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [ci:Unreleased] (empty)
 
+## [ci:v2.4.0] - 2026-11-14
+### Added
+- `libbrain-pre`, `libbrain-db-pre`, `libbrain-as-pre` (brain neural network library, pre-release channel)
+
+### Changed
+- `libutils`, `brain` and `xstyle` installed from the [my-universe](https://tsukini22.github.io/my-universe) repositories (`install.sh --only libutils,brain,xstyle`) instead of the `setup.sh` of libutils
+- `xstyle-pre` RPM package instead of building xstyle from its sources
+
 ## [ci:v2.3.1] - 2026-11-09
 ### Fixed
 - `xstyle` built from its own repository [TsukiNi22/xstyle](https://github.com/TsukiNi22/xstyle) (moved out of ai-utils: the `setup.sh` of ai-utils no longer builds it), its bash / zsh / fish completion installed with it
@@ -122,6 +130,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the CI image with basic tools (cmake, clang, wget...)
 
 [ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/ci.Dockerfile
+[ci:v2.4.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.4.0/ci.Dockerfile
 [ci:v2.3.1]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.3.1/ci.Dockerfile
 [ci:v2.3.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.3.0/ci.Dockerfile
 [ci:v2.2.0]: https://github.com/TsukiNi22/docker-image/commits/ci/v2.2.0/ci.Dockerfile
@@ -156,6 +165,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [mingw64-ci:Unreleased] (empty)
 
+## [mingw64-ci:v1.3.0] - 2026-11-14
+### Added
+- `mingw64-libbrain-pre`, `mingw64-libbrain-db-pre` (brain neural network library for windows, pre-release channel, mingw sysroot)
+
+### Changed
+- `mingw64-libutils`, `mingw64-libbrain` and `xstyle` installed from the [my-universe](https://tsukini22.github.io/my-universe) repositories (`install.sh --only libutils,brain,xstyle`) instead of the `setup.sh` of libutils
+- `xstyle-pre` RPM package (standalone native binary) instead of building xstyle from its sources
+
+### Removed
+- `clang`, `openssl-devel`, `gnupg2`, `procps-ng` and the temporary linux `libutils-pre`, only needed to build xstyle
+
 ## [mingw64-ci:v1.2.1] - 2026-11-09
 ### Fixed
 - `xstyle` built from its own repository [TsukiNi22/xstyle](https://github.com/TsukiNi22/xstyle) (moved out of ai-utils: the `setup.sh` of ai-utils no longer builds it), its bash / zsh / fish completion installed with it
@@ -177,6 +197,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of the MinGW64-CI image (windows cross compilation: `mingw64-gcc/g++`, cmake toolchain, `mingw64-openssl`, static winpthreads, `xstyle`), independent from the `ci` image
 
 [mingw64-ci:Unreleased]: https://github.com/TsukiNi22/docker-image/commits/main/mingw64-ci.Dockerfile
+[mingw64-ci:v1.3.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.3.0/mingw64-ci.Dockerfile
 [mingw64-ci:v1.2.1]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.2.1/mingw64-ci.Dockerfile
 [mingw64-ci:v1.2.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.2.0/mingw64-ci.Dockerfile
 [mingw64-ci:v1.1.0]: https://github.com/TsukiNi22/docker-image/commits/mingw64-ci/v1.1.0/mingw64-ci.Dockerfile
