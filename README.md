@@ -22,16 +22,22 @@ ghcr.io/tsukini22/mingw64-unit-tests:latest # mingw64 -> c/c++ windows unit-test
 | ----- | ----- |
 | `git:latest` | `git`, `wget` |
 | `package:latest` | `git`, `wget`, `rpm`, `createrepo-c`, `dpkg`, `gzip`, `xz`, `file`, `pacman (repo-add)`, `bsdtar`, `zstd`, `makensis (NSIS)`, `wixl (msitools)`, `zip`, `osslsigncode`, `mingw64-objdump` |
-| `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `bsdtar`, `wget`, `libutils-pre`, `xstyle` |
+| `ci:latest` | `clang/clang++ (18)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `bsdtar`, `wget`, `libutils-pre (optimized, debug & asan)`, `libbrain-pre (optimized, debug & asan)`, `xstyle-pre` |
 | `unit-tests:latest` | `ci:latest`, `Google test c++` |
-| `mingw64-ci:latest` | `mingw64-gcc/g++ (x86_64-w64-mingw32)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `mingw64-binutils`, `mingw64-cmake`, `mingw64-pkg-config`, `mingw64-openssl`, `mingw64-winpthreads-static`, `mingw64-libutils-pre (optimized & debug)`, `clang/clang++`, `xstyle` |
+| `mingw64-ci:latest` | `mingw64-gcc/g++ (x86_64-w64-mingw32)`, `ccache`, `cmake`, `make`, `rpm`, `git`, `pkg-config`, `python3`, `wget`, `mingw64-binutils`, `mingw64-cmake`, `mingw64-pkg-config`, `mingw64-openssl`, `mingw64-winpthreads-static`, `mingw64-libutils-pre (optimized & debug)`, `mingw64-libbrain-pre (optimized & debug)`, `xstyle-pre` |
 | `mingw64-unit-tests:latest` | `mingw64-ci:latest`, `Google test c++ (mingw64)`, `wine` |
 
 > [!NOTE]
 > The `mingw64-*` images set `CC`, `CXX` and `CMAKE_TOOLCHAIN_FILE` (`/usr/share/mingw/toolchain-mingw64.cmake`):
 > a plain `cmake -S . -B build` cross compiles for windows (x86_64). They are independent from the `ci`
 > image (based on `fedora:44`). `mingw64-libutils-pre` installs the latest libutils (pre-release channel, may be unstable) for windows into the mingw sysroot
-> (`find_package(utils)` works as is), `clang` is only there for the native `xstyle` (no linux `libutils`). `mingw64-unit-tests` sets `CMAKE_CROSSCOMPILING_EMULATOR=wine` so `ctest` runs the `.exe`.
+> (`find_package(utils)` works as is), `mingw64-libbrain-pre` does the same for brain, `xstyle-pre` is the native style checker (no linux `libutils`, no `clang`). `mingw64-unit-tests` sets `CMAKE_CROSSCOMPILING_EMULATOR=wine` so `ctest` runs the `.exe`.
+
+> [!NOTE]
+> `ci` and `mingw64-ci` install `libutils`, `brain` and `xstyle` from the [my-universe](https://tsukini22.github.io/my-universe) repositories
+> (`install.sh --only libutils,brain,xstyle`). libutils, brain and xstyle send `libutils-released`, `brain-released` and
+> `xstyle-released` (`repository_dispatch`, secret `DOCKER_IMAGE_REPO_TOKEN`) after a package publication: both images are
+> then rebuilt **without cache** (to install the new packages), then their `unit-tests` image.
 
 ## Status
 | Name + Link | Version | Last Update | Status |
@@ -88,7 +94,7 @@ cd docker-image
 Build the CI image:
 
 ```bash
-docker build -t ci:latest -f .github/ci.Dockerfile .
+docker build -t ci:latest -f ci.Dockerfile .
 ```
 
 You can run it using:
